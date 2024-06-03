@@ -1,6 +1,6 @@
 <h1 class="text-2xl text-bold text-yellow-300">Edit product "<span class="italic text-red-300"><%= @product.name%></span>"</h1>
 <div>
-    <%= form_with model: @product, url: "/edit-product" do |form| %>
+    <%= form_with model: @product, url: edit_product_path, method: "patch" do |form| %>
         <div class="errors p-3 bg-yellow-200">
             <% if form.object.errors.any?  %>
                 <ul class="list-disc pl-5">

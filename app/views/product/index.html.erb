@@ -18,9 +18,9 @@
                     <td class="border border-slate-300 p-3"><%= prod.name %></td>
                     <td class="text-center border border-slate-300 p-3"><%= prod.quality%></td>
                     <td class="border border-slate-300 p-3"><%= prod.description%></td>
-                    <td class="p-3">
+                    <td class="p-3 flex gap-3 flex-nowrap">
                         <%= link_to "Edit", edit_product_path(prod), :class => "text-blue-500 italic underline-offset-1 underline" %> |
-                        <%= link_to "Remove", nil, :class => "text-red-500 italic underline-offset-1 underline" %>
+                        <%= button_to "Delete", delete_product_path(prod), method: "delete", class: "text-red-500 italic underline-offset-1 underline" %>
                     </td>
                 </tr>
             <% end %>
