@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_06_03_064909) do
+ActiveRecord::Schema[7.1].define(version: 2024_06_03_083947) do
   create_table "categories", id: false, force: :cascade do |t|
     t.string "id"
     t.string "name", null: false
@@ -27,7 +27,6 @@ ActiveRecord::Schema[7.1].define(version: 2024_06_03_064909) do
     t.text "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "id_category"
   end
 
 end

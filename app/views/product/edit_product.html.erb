@@ -1,0 +1,31 @@
+<h1 class="text-2xl text-bold text-yellow-300">Edit product "<span class="italic text-red-300"><%= @product.name%></span>"</h1>
+<div>
+    <%= form_with model: @product, url: "/edit-product" do |form| %>
+        <div class="errors p-3 bg-yellow-200">
+            <% if form.object.errors.any?  %>
+                <ul class="list-disc pl-5">
+                    <% form.object.errors.full_messages.each do |error| %>
+                        <li class="text-text-red-500"><%= error %></li>
+                    <% end %>
+                </ul>
+            <% end %>
+        </div>
+
+        <div>
+            <%= form.label :name, "Product's name", class: "font-bold" %> <br>
+            <%= form.text_field :name, class: "rounded-lg w-1/2" %>
+        </div>
+
+        <div>
+            <%= form.label :quality, "Product's quality", class: "font-bold"  %> <br>
+            <%= form.number_field :quality, class: "rounded-lg w-1/2"%>
+        </div>
+
+        <div>
+            <%= form.label :description, "Product's description", class: "font-bold"  %> <br>
+            <%= form.text_area :description, class: "rounded-lg w-1/2" %>
+        </div>
+
+        <%= form.button "Update", class: "p-3 bg-green-500 hover:bg-green-800 hover:text-white rounded" %>
+    <% end %>
+</div>
